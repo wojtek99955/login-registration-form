@@ -7,11 +7,14 @@ import SignUp from "./SignUp";
 
 const Container = styled.div`
   width: 350px;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   margin: auto;
   padding: 1rem;
+  -webkit-box-shadow: 8px 8px 36px -7px rgba(66, 68, 90, 0.34);
+  -moz-box-shadow: 8px 8px 36px -7px rgba(66, 68, 90, 0.34);
+  box-shadow: 8px 8px 36px -7px rgba(66, 68, 90, 0.34);
+  border-radius: 5px;
 `;
 
 function App() {
