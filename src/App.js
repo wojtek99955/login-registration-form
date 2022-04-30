@@ -1,8 +1,9 @@
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import { TextField } from "@material-ui/core";
 import { useState } from "react";
 import styled from "styled-components";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
 
 const Container = styled.div`
   width: 500px;
@@ -25,7 +26,8 @@ function App() {
           <Tab sx={{ width: "50%" }} label="SIGN IN" />
           <Tab sx={{ width: "50%" }} label="SIGN UP" />
         </Tabs>
-        <h1>Sign In</h1>
+        {value === 0 && <SignIn />}
+        {value === 1 && <SignUp />}
       </Container>
     </div>
   );
