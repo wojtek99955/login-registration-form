@@ -10,11 +10,13 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
-  padding: 1rem;
   -webkit-box-shadow: 8px 8px 36px -7px rgba(66, 68, 90, 0.34);
   -moz-box-shadow: 8px 8px 36px -7px rgba(66, 68, 90, 0.34);
   box-shadow: 8px 8px 36px -7px rgba(66, 68, 90, 0.34);
   border-radius: 5px;
+`;
+const Content = styled.div`
+  padding: 1rem;
 `;
 
 function App() {
@@ -30,8 +32,10 @@ function App() {
           <Tab sx={{ width: "50%" }} label="SIGN IN" />
           <Tab sx={{ width: "50%" }} label="SIGN UP" />
         </Tabs>
-        {value === 0 && <SignIn setValue={setValue} />}
-        {value === 1 && <SignUp />}
+        <Content>
+          {value === 0 && <SignIn setValue={setValue} />}
+          {value === 1 && <SignUp />}
+        </Content>
       </Container>
     </div>
   );
