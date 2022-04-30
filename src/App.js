@@ -30,7 +30,7 @@ function App() {
           <Tab sx={{ width: "50%" }} label="SIGN IN" />
           <Tab sx={{ width: "50%" }} label="SIGN UP" />
         </Tabs>
-        {value === 0 && <SignIn />}
+        {value === 0 && <SignIn setValue={setValue} />}
         {value === 1 && <SignUp />}
       </Container>
     </div>
