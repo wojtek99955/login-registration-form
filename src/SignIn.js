@@ -12,15 +12,25 @@ const Container = styled.div`
     text-align: center;
   }
 `;
+const IconContainer = styled.div`
+  margin-top: 3rem;
+  padding: 0.3rem;
+
+  background: orange;
+  border-radius: 50%;
+`;
 const LockIcon = styled(LockOutline)`
   width: 2rem;
   margin: auto;
+  color: white;
 `;
 
 function SignIn() {
   return (
     <Container>
-      <LockIcon />
+      <IconContainer>
+        <LockIcon />
+      </IconContainer>
       <h1>Sign In</h1>
       <Formik
         initialValues={{
@@ -40,17 +50,22 @@ function SignIn() {
             variant="standard"
             type="text"
             name="username"
-            placeholder="Username *"
+            label="Username *"
           />
           <Field
             as={TextField}
             fullWidth
             variant="standard"
-            placeholder="Password *"
+            label="Password *"
             type="password"
             name="password"
           />
-          <Button variant="contained" fullWidth type="submit">
+          <Button
+            sx={{ marginTop: "1.5rem" }}
+            variant="contained"
+            fullWidth
+            type="submit"
+          >
             Log in
           </Button>
         </Form>

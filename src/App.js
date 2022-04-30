@@ -6,11 +6,12 @@ import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 
 const Container = styled.div`
-  width: 500px;
+  width: 350px;
   border: 1px solid red;
   display: flex;
   flex-direction: column;
   margin: auto;
+  padding: 1rem;
 `;
 
 function App() {
