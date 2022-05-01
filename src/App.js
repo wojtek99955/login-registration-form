@@ -4,6 +4,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
+import { LockOutline } from "@styled-icons/evaicons-outline/LockOutline";
 
 const Container = styled.div`
   width: 350px;
@@ -17,6 +18,21 @@ const Container = styled.div`
 `;
 const Content = styled.div`
   padding: 1rem;
+`;
+const IconContainer = styled.div`
+  width: 2.3rem;
+  height: 2.3rem;
+  margin: 2rem auto;
+  background: orange;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const LockIcon = styled(LockOutline)`
+  width: 2rem;
+  margin: auto;
+  color: white;
 `;
 
 function App() {
@@ -33,6 +49,9 @@ function App() {
           <Tab sx={{ width: "50%" }} label="SIGN UP" />
         </Tabs>
         <Content>
+          <IconContainer>
+            <LockIcon />
+          </IconContainer>
           {value === 0 && <SignIn setValue={setValue} />}
           {value === 1 && <SignUp />}
         </Content>

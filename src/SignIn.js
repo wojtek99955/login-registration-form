@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Formik, Form, Field } from "formik";
-import { LockOutline } from "@styled-icons/evaicons-outline/LockOutline";
+// import { LockOutline } from "@styled-icons/evaicons-outline/LockOutline";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
@@ -14,18 +14,18 @@ const Container = styled.div`
     margin-bottom: 1rem;
   }
 `;
-const IconContainer = styled.div`
-  margin: 2rem 0;
-  padding: 0.3rem;
+// const IconContainer = styled.div`
+//   margin: 2rem 0;
+//   padding: 0.3rem;
 
-  background: orange;
-  border-radius: 50%;
-`;
-const LockIcon = styled(LockOutline)`
-  width: 2rem;
-  margin: auto;
-  color: white;
-`;
+//   background: orange;
+//   border-radius: 50%;
+// `;
+// const LockIcon = styled(LockOutline)`
+//   width: 2rem;
+//   margin: auto;
+//   color: white;
+// `;
 
 function SignIn({ setValue }) {
   const handleChangeTab = () => {
@@ -33,9 +33,9 @@ function SignIn({ setValue }) {
   };
   return (
     <Container>
-      <IconContainer>
+      {/* <IconContainer>
         <LockIcon />
-      </IconContainer>
+      </IconContainer> */}
       <h1>Sign In</h1>
       <Formik
         initialValues={{
