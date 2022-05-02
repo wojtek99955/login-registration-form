@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
 import * as Yup from "yup";
+import Error from "./Error";
 
 const Container = styled.div`
   display: flex;
@@ -51,7 +52,7 @@ function SignIn({ setValue }) {
               name="username"
               label="Username *"
             />
-            <ErrorMessage name="username" />
+            <ErrorMessage name="username" component={Error} />
             <Field
               as={TextField}
               fullWidth
@@ -60,7 +61,7 @@ function SignIn({ setValue }) {
               type="password"
               name="password"
             />
-            <ErrorMessage name="password" />
+            <ErrorMessage name="password" component={Error} />
             <Button
               sx={{ margin: "1.5rem 0" }}
               variant="contained"
