@@ -22,7 +22,7 @@ const Content = styled.div`
 const IconContainer = styled.div`
   width: 2.3rem;
   height: 2.3rem;
-  margin: 2rem auto;
+  margin: 0.5rem auto;
   background: orange;
   border-radius: 50%;
   display: flex;
