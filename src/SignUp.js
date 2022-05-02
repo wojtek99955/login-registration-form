@@ -97,8 +97,9 @@ function SignUp() {
           />
           <FormControlLabel
             control={<Field as={Checkbox} name="termsAndConditions" />}
-            label="I accept the terms and conditions."
+            label="I agree with Terms and Privacy."
           />
+          <Button variant="contained">Sign Up</Button>
         </Form>
       </Formik>
     </Container>
