@@ -36,16 +36,19 @@ const onSubmit = (values) => {
     alert(JSON.stringify(values, null, 2));
   }, 1000);
 };
-const validationSchema = Yup.object({
-  name: Yup.string().required(),
-  surname: Yup.string().required(),
-  email: Yup.string().email().required(),
-  tel: Yup.number().required(),
-  password: Yup.string().required().min(6),
+const validationSchema = Yup.object().shape({
+  name: Yup.string().required("required"),
+  surname: Yup.string().required("required"),
+  email: Yup.string().email().required("required"),
+  tel: Yup.number().required("required"),
+  gender: Yup.string()
+    .oneOf(["male", "female"], "Required")
+    .required("Required"),
+  password: Yup.string().required("required").min(6),
   confirmPassword: Yup.string()
-    .oneOf([Yup.ref("password")], "Password must match")
-    .required(),
-  termsAndConditions: Yup.string().oneOf(["true"], "Accept terms & conditions"),
+    .oneOf([Yup.ref("password")], "password must match")
+    .required("required"),
+  termsAndConditions: Yup.string().oneOf(["true"], "accept terms & conditions"),
 });
 
 function SignUp() {
@@ -84,14 +87,14 @@ function SignUp() {
           <ErrorMessage name="email" component={Error} />
           <FormControl>
             <FormLabel>Gender</FormLabel>
-            <RadioGroup name="gender" row>
+            <Field as={RadioGroup} name="gender" row>
               <FormControlLabel
                 value="female"
                 control={<Radio />}
-                label="Female"
+                label="female"
               />
-              <FormControlLabel value="male" control={<Radio />} label="Male" />
-            </RadioGroup>
+              <FormControlLabel value="male" control={<Radio />} label="male" />
+            </Field>
           </FormControl>
           <ErrorMessage name="gender" component={Error} />
           <Field
