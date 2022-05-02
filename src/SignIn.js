@@ -31,7 +31,7 @@ function SignIn({ setValue }) {
     }, 1000);
   };
   const schemaValidation = Yup.object({
-    username: Yup.string().required("type name"),
+    username: Yup.string().required("type name").min(3),
     password: Yup.string().required("type password").min(6),
   });
   return (
