@@ -6,7 +6,7 @@ Registration / login form created using formik
 
 ## Live
 
-Link:
+Link: https://formik-registration-form.netlify.app/
 
 ## Technologies
 
