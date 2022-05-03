@@ -60,80 +60,90 @@ function SignUp() {
         onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
-        <Form>
-          <Field
-            as={TextField}
-            name="name"
-            fullWidth
-            variant="standard"
-            label="Name *"
-          />
-          <ErrorMessage name="name" component={Error} />
-          <Field
-            as={TextField}
-            name="surname"
-            fullWidth
-            variant="standard"
-            label="Surname *"
-          />
-          <ErrorMessage name="surname" component={Error} />
-          <Field
-            as={TextField}
-            name="email"
-            fullWidth
-            variant="standard"
-            label="Email *"
-          />
-          <ErrorMessage name="email" component={Error} />
-          <FormControl>
-            <FormLabel>Gender</FormLabel>
-            <Field as={RadioGroup} name="gender" row>
-              <FormControlLabel
-                value="female"
-                control={<Radio />}
-                label="female"
-              />
-              <FormControlLabel value="male" control={<Radio />} label="male" />
-            </Field>
-          </FormControl>
-          <ErrorMessage name="gender" component={Error} />
-          <Field
-            as={TextField}
-            name="tel"
-            fullWidth
-            variant="standard"
-            label="Phone Number *"
-          />
-          <ErrorMessage name="tel" component={Error} />
-          <Field
-            as={TextField}
-            name="password"
-            fullWidth
-            variant="standard"
-            label="Password *"
-          />
-          <ErrorMessage name="password" component={Error} />
-          <Field
-            as={TextField}
-            name="confirmPassword"
-            fullWidth
-            variant="standard"
-            label="ConfirmPassword *"
-          />
-          <ErrorMessage name="confirmPassword" component={Error} />
-          <FormControlLabel
-            control={<Field as={Checkbox} name="termsAndConditions" />}
-            label={
-              <span style={{ fontSize: "0.8rem" }}>
-                I agree with Terms and Privacy.
-              </span>
-            }
-          />
-          <ErrorMessage name="termsAndConditions" component={Error} />
-          <Button variant="contained" type="submit">
-            Sign Up
-          </Button>
-        </Form>
+        {({ isValid, dirty }) => (
+          <Form>
+            <Field
+              as={TextField}
+              name="name"
+              fullWidth
+              variant="standard"
+              label="Name *"
+            />
+            <ErrorMessage name="name" component={Error} />
+            <Field
+              as={TextField}
+              name="surname"
+              fullWidth
+              variant="standard"
+              label="Surname *"
+            />
+            <ErrorMessage name="surname" component={Error} />
+            <Field
+              as={TextField}
+              name="email"
+              fullWidth
+              variant="standard"
+              label="Email *"
+            />
+            <ErrorMessage name="email" component={Error} />
+            <FormControl>
+              <FormLabel>Gender</FormLabel>
+              <Field as={RadioGroup} name="gender" row>
+                <FormControlLabel
+                  value="female"
+                  control={<Radio />}
+                  label="female"
+                />
+                <FormControlLabel
+                  value="male"
+                  control={<Radio />}
+                  label="male"
+                />
+              </Field>
+            </FormControl>
+            <ErrorMessage name="gender" component={Error} />
+            <Field
+              as={TextField}
+              name="tel"
+              fullWidth
+              variant="standard"
+              label="Phone Number *"
+            />
+            <ErrorMessage name="tel" component={Error} />
+            <Field
+              as={TextField}
+              name="password"
+              fullWidth
+              variant="standard"
+              label="Password *"
+            />
+            <ErrorMessage name="password" component={Error} />
+            <Field
+              as={TextField}
+              name="confirmPassword"
+              fullWidth
+              variant="standard"
+              label="ConfirmPassword *"
+            />
+            <ErrorMessage name="confirmPassword" component={Error} />
+            <FormControlLabel
+              control={<Field as={Checkbox} name="termsAndConditions" />}
+              label={
+                <span style={{ fontSize: "0.8rem" }}>
+                  I agree with Terms and Privacy.
+                </span>
+              }
+            />
+            <ErrorMessage name="termsAndConditions" component={Error} />
+            <Button
+              variant="contained"
+              type="submit"
+              disabled={!(dirty && isValid)}
+            >
+              Sign Up
+            </Button>
+          </Form>
+        )}
       </Formik>
     </Container>
   );
