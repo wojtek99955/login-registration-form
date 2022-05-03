@@ -40,7 +40,7 @@ const validationSchema = Yup.object().shape({
   name: Yup.string().required("required"),
   surname: Yup.string().required("required"),
   email: Yup.string().email().required("required"),
-  tel: Yup.number().required("required"),
+  tel: Yup.number().typeError("invalid number").required("required"),
   gender: Yup.string()
     .oneOf(["male", "female"], "Required")
     .required("Required"),
