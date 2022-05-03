@@ -31,10 +31,11 @@ const initialValues = {
   confirmPassword: "",
   termsAndConditions: false,
 };
-const onSubmit = (values) => {
+const onSubmit = (values, onSubmitProps) => {
   setTimeout(() => {
     alert(JSON.stringify(values, null, 2));
   }, 1000);
+  onSubmitProps.resetForm();
 };
 const validationSchema = Yup.object().shape({
   name: Yup.string().required("required"),
