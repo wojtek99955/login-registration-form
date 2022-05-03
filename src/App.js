@@ -15,6 +15,7 @@ const Container = styled.div`
   -moz-box-shadow: 8px 8px 36px -7px rgba(66, 68, 90, 0.34);
   box-shadow: 8px 8px 36px -7px rgba(66, 68, 90, 0.34);
   border-radius: 5px;
+  margin-top: 5rem;
 `;
 const Content = styled.div`
   padding: 1rem;
