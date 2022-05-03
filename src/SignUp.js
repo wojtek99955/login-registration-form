@@ -123,7 +123,11 @@ function SignUp() {
           <ErrorMessage name="confirmPassword" component={Error} />
           <FormControlLabel
             control={<Field as={Checkbox} name="termsAndConditions" />}
-            label="I agree with Terms and Privacy."
+            label={
+              <span style={{ fontSize: "0.8rem" }}>
+                I agree with Terms and Privacy.
+              </span>
+            }
           />
           <ErrorMessage name="termsAndConditions" component={Error} />
           <Button variant="contained" type="submit">
