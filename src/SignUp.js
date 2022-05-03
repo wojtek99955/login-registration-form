@@ -113,6 +113,7 @@ function SignUp() {
             <Field
               as={TextField}
               name="password"
+              type="password"
               fullWidth
               variant="standard"
               label="Password *"
@@ -121,6 +122,7 @@ function SignUp() {
             <Field
               as={TextField}
               name="confirmPassword"
+              type="password"
               fullWidth
               variant="standard"
               label="ConfirmPassword *"
