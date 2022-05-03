@@ -13,6 +13,7 @@ Link: https://formik-registration-form.netlify.app/
 - reactjs
 - styled-components
 - formik
+- material ui
 
 ## Installation
 
