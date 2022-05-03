@@ -40,7 +40,12 @@ const validationSchema = Yup.object().shape({
   name: Yup.string().required("required"),
   surname: Yup.string().required("required"),
   email: Yup.string().email().required("required"),
-  tel: Yup.number().typeError("invalid number").required("required"),
+  tel: Yup.string()
+    .required("This field is Required")
+    .matches(
+      /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+      "Phone number is not valid"
+    ),
   gender: Yup.string()
     .oneOf(["male", "female"], "Required")
     .required("Required"),
