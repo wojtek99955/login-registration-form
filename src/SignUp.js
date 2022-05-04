@@ -138,7 +138,7 @@ function SignUp() {
               control={<Field as={Checkbox} name="termsAndConditions" />}
               label={
                 <span style={{ fontSize: "0.8rem" }}>
-                  I agree with Terms and Privacy.
+                  I agree with Terms and Privacy
                 </span>
               }
             />
